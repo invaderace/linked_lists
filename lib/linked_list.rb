@@ -117,6 +117,16 @@ class LinkedList
   end
     
   #to_s represent your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> nil
+  def to_s
+    string = ""
+    current_node = @head
+    while current_node != nil
+      string = string + "( #{current_node.value} ) -> "
+      current_node = current_node.next_node
+    end
+
+    string = string + 'nil'
+  end
 
   #Extra Credit
   #insert_at(value, index) that inserts the node with the provided value at the given index
