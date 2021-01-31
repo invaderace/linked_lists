@@ -73,6 +73,19 @@ class LinkedList
   end
   
   #pop removes the last element from the list
+  def pop
+    current_node = @head
+    previous_node = nil
+
+    if current_node != nil
+      while current_node.next_node != nil
+        previous_node = current_node
+        current_node = current_node.next_node
+      end
+      current_node = nil
+      previous_node.next_node = nil
+    end
+  end
   
   #contains?(value) returns true if the passed in value is in the list and otherwise returns false.
   
