@@ -38,8 +38,26 @@ class LinkedList
     count
   end  
   #head returns the first node in the list
+  def head
+    if @head.nil?
+      nil
+    else
+      @head.value
+    end
+  end
   
   #tail returns the last node in the list
+  def tail
+    if head.nil?
+      nil
+    else
+      current_node = @head
+      while current_node.next_node != nil
+        current_node = current_node.next_node
+      end
+      current_node.value
+    end
+  end
   
   #at(index) returns the node at the given index
   
