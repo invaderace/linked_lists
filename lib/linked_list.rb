@@ -2,11 +2,22 @@ require_relative 'node.rb'
 
 # respresents the full list
 class LinkedList
-  def initialize()
-    @list = Node.new('head')
+  attr_accessor :head
+
+  def initialize(head = nil)
+    @head = head
   end
 
   #append(value) adds a new node containing value to the end of the list
+  def append(value)
+    return @head = Node.new(value) if @head.nil?
+
+    current_node = @head
+    while current_node.next_node != nil
+      current_node = current_node.next_node
+    end
+    current_node.next_node = Node.new(value)
+  end
 
   #prepend(value) adds a new node containing value to the start of the list
   
