@@ -25,11 +25,18 @@ class LinkedList
 
     list = @head
     @head = Node.new(value, list)
-
   end
   
   #size returns the total number of nodes in the list
-  
+  def size
+    current_node = @head
+    count = 0
+    while current_node != nil
+      current_node = current_node.next_node
+      count += 1
+    end
+    count
+  end  
   #head returns the first node in the list
   
   #tail returns the last node in the list
