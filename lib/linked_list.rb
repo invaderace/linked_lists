@@ -88,9 +88,22 @@ class LinkedList
   end
   
   #contains?(value) returns true if the passed in value is in the list and otherwise returns false.
+  def contains?(value)
+    if @head.nil?
+      false
+    else
+      current_node = @head
+      while current_node != nil
+        return true if current_node.value == value
+        
+        current_node = current_node.next_node
+      end
+      false
+    end
+  end
   
   #find(value) returns the index of the node containing value, or nil if not found.
-  
+    
   #to_s represent your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> nil
 
   #Extra Credit
