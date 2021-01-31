@@ -48,7 +48,7 @@ class LinkedList
   
   #tail returns the last node in the list
   def tail
-    if head.nil?
+    if @head.nil?
       nil
     else
       current_node = @head
@@ -60,6 +60,17 @@ class LinkedList
   end
   
   #at(index) returns the node at the given index
+  def at(index)
+    current_index = 0
+    current_node = @head
+
+    until current_index.equal? index
+      current_node = current_node.next_node if current_node != nil
+      current_index += 1
+    end
+
+    current_node.nil? ? nil : current_node.value
+  end
   
   #pop removes the last element from the list
   
