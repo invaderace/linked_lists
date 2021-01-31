@@ -20,6 +20,13 @@ class LinkedList
   end
 
   #prepend(value) adds a new node containing value to the start of the list
+  def prepend(value)
+    return @head = Node.new(value) if @head.nil?
+
+    list = @head
+    @head = Node.new(value, list)
+
+  end
   
   #size returns the total number of nodes in the list
   
