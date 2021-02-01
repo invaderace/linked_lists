@@ -1,3 +1,5 @@
+require 'pry'
+
 require_relative 'node.rb'
 
 # respresents the full list
@@ -69,7 +71,7 @@ class LinkedList
       current_index += 1
     end
 
-    current_node.nil? ? nil : current_node.value
+    current_node.nil? ? nil : current_node
   end
   
   #pop removes the last element from the list
@@ -130,6 +132,20 @@ class LinkedList
 
   #Extra Credit
   #insert_at(value, index) that inserts the node with the provided value at the given index
-  
+  def insert_at(value, index)
+    temp = at(index)
+    current_node = @head
+    current_index = 0
+
+    until current_index.equal? index - 1
+      current_node = current_node.next_node if current_node != nil
+      current_index += 1
+    end
+
+    unless current_node.nil? 
+      current_node.next_node = Node.new(value, temp)
+    end
+  end
+
   #remove_at(index) that removes the node at the given index. (You will need to update the links of your nodes in the list when you remove a node.)
 end
