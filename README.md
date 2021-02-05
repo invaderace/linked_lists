@@ -1,3 +1,6 @@
+Linked list class in ruby. main.rb requires some manual entry as it is only currently used to test methods.
+
+
 From https://www.theodinproject.com/courses/ruby-programming/lessons/linked-lists
 
 You will need two classes:
